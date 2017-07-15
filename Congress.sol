@@ -16,7 +16,7 @@ contract owned {
     }
 }
 
-contract tokenRecipient { 
+contract tokenRecipient {
     event receivedEther(address sender, uint amount);
     event receivedTokens(address _from, uint256 _value, address _token, bytes _extraData);
 
@@ -94,9 +94,9 @@ contract Congress is owned, tokenRecipient {
         changeVotingRules(minimumQuorumForProposals, minutesForDebate, marginOfVotesForMajority);
         if (congressLeader != 0) owner = congressLeader;
         // It’s necessary to add an empty first member
-        addMember(0, ''); 
-        // and let's add the founder, to save a step later       
-        addMember(owner, 'founder');        
+        addMember(0, '');
+        // and let's add the founder, to save a step later
+        addMember(owner, 'founder');
     }
 
     /*make member*/
